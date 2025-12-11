@@ -593,6 +593,12 @@ export function reduce(
 /** Create a reference object with `top` left and `bottom` right. */
 export function ref(top: number | Function, bottom: number | Function): object;
 
+/** Remove `number` of characters from the end of `text`. */
+export function removeend(text: string, number: number): string;
+
+/** Remove `number` of characters from the start of `text`. */
+export function removestart(text: string, number: number): string;
+
 /** Replace `num_chars` at `start` in `text` with `new_text`.  */
 export function replace(
   text: string,
