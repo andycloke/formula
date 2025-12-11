@@ -1596,20 +1596,25 @@ var parser = (function() {
             return "SCOPE";
             break;
           case 34:
-            yy_.yytext = yy_.yytext.slice(0, -1);
-            return "SCOPE";
+            yy_.yytext = yy_.yytext
+              .substr(1, yy_.yyleng - 2)
+              .replace(/''/g, "'");
+            return "STRING";
             break;
           case 35:
+            yy_.yytext = yy_.yytext.slice(0, -1);
+            return "SCOPE";
+          case 36:
             yy_.yytext = yy_.yytext.slice(1, -1);
             return "SCOPE";
             break;
-          case 36:
+          case 37:
             return 21;
             break;
-          case 37:
+          case 38:
             return 5;
             break;
-          case 38:
+          case 39:
             return "INVALID";
             break;
         }
@@ -1649,6 +1654,7 @@ var parser = (function() {
         /^(?:"(?:""|[^"])*")/,
         /^(?:\$'(?:''|[^'])*'!)/,
         /^(?:'(?:''|[^'])*'!)/,
+        /^(?:'(?:''|[^'])*')/,
         /^(?:[a-zA-Z]([a-zA-Z0-9_.$]+)?!)/,
         /^(?:\$([a-zA-Z])([a-zA-Z0-9_.$]+)?!)/,
         /^(?:([\[\]a-zA-Z0-9_.$^@\(]+))/,
@@ -1658,45 +1664,9 @@ var parser = (function() {
       conditions: {
         INITIAL: {
           rules: [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10,
-            11,
-            12,
-            13,
-            14,
-            15,
-            16,
-            17,
-            18,
-            19,
-            20,
-            21,
-            22,
-            23,
-            24,
-            25,
-            26,
-            27,
-            28,
-            29,
-            30,
-            31,
-            32,
-            33,
-            34,
-            35,
-            36,
-            37,
-            38
+            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+            19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+            36, 37, 38, 39
           ],
           inclusive: true
         }

@@ -48,6 +48,7 @@ frac                        (?:\.[0-9]+)
 \"(?:\"\"|[^"])*\"    yytext = yytext.substr(1,yyleng-2).replace(/\"\"/g, "\""); return "STRING";
 \$\'(?:\'\'|[^'])*\'\!    yytext = yytext.substr(2,yyleng-3).replace(/\"\"/g, "\""); return "SCOPE";
 \'(?:\'\'|[^'])*\'\!    yytext = yytext.substr(1,yyleng-3).replace(/\"\"/g, "\""); return "SCOPE";
+\'(?:\'\'|[^'])*\'    yytext = yytext.substr(1,yyleng-2).replace(/''/g, "'"); return "STRING";
 [a-zA-Z]([a-zA-Z0-9_.$]+)?\!  yytext = yytext.slice(0, -1); return "SCOPE"
 \$([a-zA-Z])([a-zA-Z0-9_.$]+)?\!  yytext = yytext.slice(1, -1); return "SCOPE"
 ([\[\]a-zA-Z0-9_.$^@\(]+)  return 'IDENT'

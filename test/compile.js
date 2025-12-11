@@ -2,7 +2,7 @@ var test = require("tape");
 import compile from "../src/compile";
 
 test("compiler should pass basic tests", function(t) {
-  t.plan(17);
+  t.plan(21);
 
   t.equal(compile("2=2").code, "Formula.EQ(2, 2)");
   t.equal(compile("-2").code, "Formula.MINUS(2)");
@@ -22,6 +22,11 @@ test("compiler should pass basic tests", function(t) {
   t.equal(compile("@foo1").code, 'context.get("@foo1")');
   t.equal(compile(`"""Hello, World""!"`).code, '"\\"Hello, World\\"!"')
 
+  // Single quote string support
+  t.equal(compile("'hello'").code, '"hello"', "single-quoted string should compile");
+  t.equal(compile("'it''s'").code, '"it\'s"', "escaped single quote should work");
+  t.equal(compile(`'"'`).code, `"\\""`, "double quote inside single-quoted string");
+  t.equal(compile(`'a' & 'b'`).code, `Formula.CONCATENATE("a", "b")`, "single-quoted concatenation");
 });
 
 test("compiler complex nesting should work", function(t) {
