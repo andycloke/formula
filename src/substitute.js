@@ -2,7 +2,7 @@
 
 // SUBSTITUTE `old_text` with `new_text`, optionally only a selected occurence.
 export default function substitute(text, old_text, new_text, occurrence) {
-  if (!text || !old_text || !new_text) {
+  if (!text || !old_text || new_text == null) {
     return text;
   } else if (occurrence === undefined) {
     return text.replace(new RegExp(old_text, "g"), new_text);
