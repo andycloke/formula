@@ -59,26 +59,42 @@
       }
       .function-list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 8px;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 10px;
         list-style: none;
         padding: 0;
         margin: 0;
       }
       .function-list a {
-        display: block;
-        padding: 8px 12px;
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        padding: 10px 14px;
         background: #f8f8f8;
         color: #333;
         text-decoration: none;
         border-radius: 4px;
-        font-family: monospace;
-        font-size: 14px;
         transition: all 0.2s;
       }
       .function-list a:hover {
         background: #e74c3c;
         color: #fff;
+      }
+      .function-list a:hover .fn-desc {
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .fn-name {
+        font-family: monospace;
+        font-size: 14px;
+        font-weight: 600;
+        flex-shrink: 0;
+      }
+      .fn-desc {
+        font-size: 12px;
+        color: #666;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       .function-list li.hidden {
         display: none;
@@ -113,256 +129,256 @@
     <div class="category">
       <h2>Math <span class="count"></span></h2>
       <ul class="function-list" data-category="math">
-        <li><a href="src/abs.html">abs</a></li>
-        <li><a href="src/add.html">add</a></li>
-        <li><a href="src/acos.html">acos</a></li>
-        <li><a href="src/acosh.html">acosh</a></li>
-        <li><a href="src/acot.html">acot</a></li>
-        <li><a href="src/acoth.html">acoth</a></li>
-        <li><a href="src/asin.html">asin</a></li>
-        <li><a href="src/asinh.html">asinh</a></li>
-        <li><a href="src/atan.html">atan</a></li>
-        <li><a href="src/atan2.html">atan2</a></li>
-        <li><a href="src/atanh.html">atanh</a></li>
-        <li><a href="src/average.html">average</a></li>
-        <li><a href="src/base.html">base</a></li>
-        <li><a href="src/bin2dec.html">bin2dec</a></li>
-        <li><a href="src/ceiling.html">ceiling</a></li>
-        <li><a href="src/cos.html">cos</a></li>
-        <li><a href="src/dec2bin.html">dec2bin</a></li>
-        <li><a href="src/degrees.html">degrees</a></li>
-        <li><a href="src/divide.html">divide</a></li>
-        <li><a href="src/even.html">even</a></li>
-        <li><a href="src/floor.html">floor</a></li>
-        <li><a href="src/int.html">int</a></li>
-        <li><a href="src/max.html">max</a></li>
-        <li><a href="src/min.html">min</a></li>
-        <li><a href="src/minus.html">minus</a></li>
-        <li><a href="src/mod.html">mod</a></li>
-        <li><a href="src/multiply.html">multiply</a></li>
-        <li><a href="src/oct2dec.html">oct2dec</a></li>
-        <li><a href="src/pi.html">pi</a></li>
-        <li><a href="src/plus.html">plus</a></li>
-        <li><a href="src/power.html">power</a></li>
-        <li><a href="src/round.html">round</a></li>
-        <li><a href="src/roundup.html">roundup</a></li>
-        <li><a href="src/sin.html">sin</a></li>
-        <li><a href="src/subtract.html">subtract</a></li>
-        <li><a href="src/sum.html">sum</a></li>
-        <li><a href="src/tan.html">tan</a></li>
-        <li><a href="src/tau.html">tau</a></li>
-        <li><a href="src/trunc.html">trunc</a></li>
+        <li><a href="src/abs.html"><span class="fn-name">abs</span><span class="fn-desc">Computes absolute value of a number</span></a></li>
+        <li><a href="src/add.html"><span class="fn-name">add</span><span class="fn-desc">Calculates the sum of two numbers</span></a></li>
+        <li><a href="src/acos.html"><span class="fn-name">acos</span><span class="fn-desc">Computes the inverse cosine of a number</span></a></li>
+        <li><a href="src/acosh.html"><span class="fn-name">acosh</span><span class="fn-desc">Computes the hyperbolic inverse cosine</span></a></li>
+        <li><a href="src/acot.html"><span class="fn-name">acot</span><span class="fn-desc">Computes the arccotangent of a number</span></a></li>
+        <li><a href="src/acoth.html"><span class="fn-name">acoth</span><span class="fn-desc">Computes the hyperbolic arccotangent</span></a></li>
+        <li><a href="src/asin.html"><span class="fn-name">asin</span><span class="fn-desc">Computes the inverse sine of a number</span></a></li>
+        <li><a href="src/asinh.html"><span class="fn-name">asinh</span><span class="fn-desc">Computes the inverse hyperbolic sine</span></a></li>
+        <li><a href="src/atan.html"><span class="fn-name">atan</span><span class="fn-desc">Returns the arctangent in radians</span></a></li>
+        <li><a href="src/atan2.html"><span class="fn-name">atan2</span><span class="fn-desc">Returns the arctangent of y/x in radians</span></a></li>
+        <li><a href="src/atanh.html"><span class="fn-name">atanh</span><span class="fn-desc">Computes the inverse hyperbolic tangent</span></a></li>
+        <li><a href="src/average.html"><span class="fn-name">average</span><span class="fn-desc">Computes sum divided by count</span></a></li>
+        <li><a href="src/base.html"><span class="fn-name">base</span><span class="fn-desc">Converts number to text with given radix</span></a></li>
+        <li><a href="src/bin2dec.html"><span class="fn-name">bin2dec</span><span class="fn-desc">Converts binary string to decimal</span></a></li>
+        <li><a href="src/ceiling.html"><span class="fn-name">ceiling</span><span class="fn-desc">Rounds up to nearest multiple</span></a></li>
+        <li><a href="src/cos.html"><span class="fn-name">cos</span><span class="fn-desc">Returns the cosine of a value</span></a></li>
+        <li><a href="src/dec2bin.html"><span class="fn-name">dec2bin</span><span class="fn-desc">Converts decimal to binary string</span></a></li>
+        <li><a href="src/degrees.html"><span class="fn-name">degrees</span><span class="fn-desc">Converts radians into degrees</span></a></li>
+        <li><a href="src/divide.html"><span class="fn-name">divide</span><span class="fn-desc">Calculates the quotient of two numbers</span></a></li>
+        <li><a href="src/even.html"><span class="fn-name">even</span><span class="fn-desc">Rounds up to nearest even integer</span></a></li>
+        <li><a href="src/floor.html"><span class="fn-name">floor</span><span class="fn-desc">Rounds down to nearest integer</span></a></li>
+        <li><a href="src/int.html"><span class="fn-name">int</span><span class="fn-desc">Truncates to integer</span></a></li>
+        <li><a href="src/max.html"><span class="fn-name">max</span><span class="fn-desc">Returns the largest number from a list</span></a></li>
+        <li><a href="src/min.html"><span class="fn-name">min</span><span class="fn-desc">Returns the smallest number from a list</span></a></li>
+        <li><a href="src/minus.html"><span class="fn-name">minus</span><span class="fn-desc">Inverts a value (negation)</span></a></li>
+        <li><a href="src/mod.html"><span class="fn-name">mod</span><span class="fn-desc">Returns the remainder of a / b</span></a></li>
+        <li><a href="src/multiply.html"><span class="fn-name">multiply</span><span class="fn-desc">Calculates the product of two numbers</span></a></li>
+        <li><a href="src/oct2dec.html"><span class="fn-name">oct2dec</span><span class="fn-desc">Converts octal to decimal</span></a></li>
+        <li><a href="src/pi.html"><span class="fn-name">pi</span><span class="fn-desc">Returns the value of PI</span></a></li>
+        <li><a href="src/plus.html"><span class="fn-name">plus</span><span class="fn-desc">Converts a value into a number</span></a></li>
+        <li><a href="src/power.html"><span class="fn-name">power</span><span class="fn-desc">Computes a value raised to nth power</span></a></li>
+        <li><a href="src/round.html"><span class="fn-name">round</span><span class="fn-desc">Converts number to fixed precision</span></a></li>
+        <li><a href="src/roundup.html"><span class="fn-name">roundup</span><span class="fn-desc">Rounds up to fixed precision</span></a></li>
+        <li><a href="src/sin.html"><span class="fn-name">sin</span><span class="fn-desc">Calculates the sine of a value</span></a></li>
+        <li><a href="src/subtract.html"><span class="fn-name">subtract</span><span class="fn-desc">Calculates the difference of two numbers</span></a></li>
+        <li><a href="src/sum.html"><span class="fn-name">sum</span><span class="fn-desc">Sums a list of numbers</span></a></li>
+        <li><a href="src/tan.html"><span class="fn-name">tan</span><span class="fn-desc">Computes the tangent of a value</span></a></li>
+        <li><a href="src/tau.html"><span class="fn-name">tau</span><span class="fn-desc">Returns the universal circle constant</span></a></li>
+        <li><a href="src/trunc.html"><span class="fn-name">trunc</span><span class="fn-desc">Truncates decimal portion</span></a></li>
       </ul>
     </div>
 
     <div class="category">
       <h2>Text <span class="count"></span></h2>
       <ul class="function-list" data-category="text">
-        <li><a href="src/camelcase.html">camelcase</a></li>
-        <li><a href="src/char.html">char</a></li>
-        <li><a href="src/clean.html">clean</a></li>
-        <li><a href="src/code.html">code</a></li>
-        <li><a href="src/concatenate.html">concatenate</a></li>
-        <li><a href="src/exact.html">exact</a></li>
-        <li><a href="src/find.html">find</a></li>
-        <li><a href="src/hash.html">hash</a></li>
-        <li><a href="src/join.html">join</a></li>
-        <li><a href="src/left.html">left</a></li>
-        <li><a href="src/len.html">len</a></li>
-        <li><a href="src/lower.html">lower</a></li>
-        <li><a href="src/proper.html">proper</a></li>
-        <li><a href="src/removeend.html">removeend</a></li>
-        <li><a href="src/removestart.html">removestart</a></li>
-        <li><a href="src/replace.html">replace</a></li>
-        <li><a href="src/rept.html">rept</a></li>
-        <li><a href="src/right.html">right</a></li>
-        <li><a href="src/search.html">search</a></li>
-        <li><a href="src/snakecase.html">snakecase</a></li>
-        <li><a href="src/split.html">split</a></li>
-        <li><a href="src/substitute.html">substitute</a></li>
-        <li><a href="src/substituteAll.html">substituteAll</a></li>
-        <li><a href="src/text.html">text</a></li>
-        <li><a href="src/trim.html">trim</a></li>
-        <li><a href="src/upper.html">upper</a></li>
+        <li><a href="src/camelcase.html"><span class="fn-name">camelcase</span><span class="fn-desc">Converts text to camelCase</span></a></li>
+        <li><a href="src/char.html"><span class="fn-name">char</span><span class="fn-desc">Converts number to character (e.g. 65 => 'A')</span></a></li>
+        <li><a href="src/clean.html"><span class="fn-name">clean</span><span class="fn-desc">Removes blank properties from object</span></a></li>
+        <li><a href="src/code.html"><span class="fn-name">code</span><span class="fn-desc">Returns the character code of text</span></a></li>
+        <li><a href="src/concatenate.html"><span class="fn-name">concatenate</span><span class="fn-desc">Reduces values into a single string</span></a></li>
+        <li><a href="src/exact.html"><span class="fn-name">exact</span><span class="fn-desc">Compares two values with strict equality</span></a></li>
+        <li><a href="src/find.html"><span class="fn-name">find</span><span class="fn-desc">Searches for text within a string</span></a></li>
+        <li><a href="src/hash.html"><span class="fn-name">hash</span><span class="fn-desc">Generates a hash from text</span></a></li>
+        <li><a href="src/join.html"><span class="fn-name">join</span><span class="fn-desc">Joins array elements with delimiter</span></a></li>
+        <li><a href="src/left.html"><span class="fn-name">left</span><span class="fn-desc">Extracts characters from left side</span></a></li>
+        <li><a href="src/len.html"><span class="fn-name">len</span><span class="fn-desc">Returns the size of a string or array</span></a></li>
+        <li><a href="src/lower.html"><span class="fn-name">lower</span><span class="fn-desc">Converts value to lower case</span></a></li>
+        <li><a href="src/proper.html"><span class="fn-name">proper</span><span class="fn-desc">Converts text into proper case</span></a></li>
+        <li><a href="src/removeend.html"><span class="fn-name">removeend</span><span class="fn-desc">Removes suffix from text</span></a></li>
+        <li><a href="src/removestart.html"><span class="fn-name">removestart</span><span class="fn-desc">Removes prefix from text</span></a></li>
+        <li><a href="src/replace.html"><span class="fn-name">replace</span><span class="fn-desc">Returns new string after replacing text</span></a></li>
+        <li><a href="src/rept.html"><span class="fn-name">rept</span><span class="fn-desc">Repeats text a given number of times</span></a></li>
+        <li><a href="src/right.html"><span class="fn-name">right</span><span class="fn-desc">Extracts characters from right side</span></a></li>
+        <li><a href="src/search.html"><span class="fn-name">search</span><span class="fn-desc">Finds text using wildcards (?, *)</span></a></li>
+        <li><a href="src/snakecase.html"><span class="fn-name">snakecase</span><span class="fn-desc">Converts text to snake_case</span></a></li>
+        <li><a href="src/split.html"><span class="fn-name">split</span><span class="fn-desc">Splits text by a delimiter</span></a></li>
+        <li><a href="src/substitute.html"><span class="fn-name">substitute</span><span class="fn-desc">Replaces old text with new text</span></a></li>
+        <li><a href="src/substituteAll.html"><span class="fn-name">substituteAll</span><span class="fn-desc">Replaces all matching tokens</span></a></li>
+        <li><a href="src/text.html"><span class="fn-name">text</span><span class="fn-desc">Formats a value as text</span></a></li>
+        <li><a href="src/trim.html"><span class="fn-name">trim</span><span class="fn-desc">Removes whitespace from both ends</span></a></li>
+        <li><a href="src/upper.html"><span class="fn-name">upper</span><span class="fn-desc">Converts string to upper case</span></a></li>
       </ul>
     </div>
 
     <div class="category">
       <h2>Logic <span class="count"></span></h2>
       <ul class="function-list" data-category="logic">
-        <li><a href="src/and.html">and</a></li>
-        <li><a href="src/branch.html">branch</a></li>
-        <li><a href="src/choose.html">choose</a></li>
-        <li><a href="src/eq.html">eq</a></li>
-        <li><a href="src/gt.html">gt</a></li>
-        <li><a href="src/gte.html">gte</a></li>
-        <li><a href="src/identity.html">identity</a></li>
-        <li><a href="src/ifblank.html">ifblank</a></li>
-        <li><a href="src/ifempty.html">ifempty</a></li>
-        <li><a href="src/iferror.html">iferror</a></li>
-        <li><a href="src/ifna.html">ifna</a></li>
-        <li><a href="src/lt.html">lt</a></li>
-        <li><a href="src/lte.html">lte</a></li>
-        <li><a href="src/nand.html">nand</a></li>
-        <li><a href="src/ne.html">ne</a></li>
-        <li><a href="src/nor.html">nor</a></li>
-        <li><a href="src/not.html">not</a></li>
-        <li><a href="src/or.html">or</a></li>
-        <li><a href="src/switch.html">switch</a></li>
-        <li><a href="src/xor.html">xor</a></li>
+        <li><a href="src/and.html"><span class="fn-name">and</span><span class="fn-desc">Reduces truthy values to true/false</span></a></li>
+        <li><a href="src/branch.html"><span class="fn-name">branch</span><span class="fn-desc">Provides if-elseif-else logic</span></a></li>
+        <li><a href="src/choose.html"><span class="fn-name">choose</span><span class="fn-desc">Returns item at given index</span></a></li>
+        <li><a href="src/eq.html"><span class="fn-name">eq</span><span class="fn-desc">Compares two values for equality</span></a></li>
+        <li><a href="src/gt.html"><span class="fn-name">gt</span><span class="fn-desc">Returns true when a > b</span></a></li>
+        <li><a href="src/gte.html"><span class="fn-name">gte</span><span class="fn-desc">Returns true when a >= b</span></a></li>
+        <li><a href="src/identity.html"><span class="fn-name">identity</span><span class="fn-desc">Returns the input value unchanged</span></a></li>
+        <li><a href="src/ifblank.html"><span class="fn-name">ifblank</span><span class="fn-desc">Returns fallback if value is blank</span></a></li>
+        <li><a href="src/ifempty.html"><span class="fn-name">ifempty</span><span class="fn-desc">Returns fallback if value is empty</span></a></li>
+        <li><a href="src/iferror.html"><span class="fn-name">iferror</span><span class="fn-desc">Returns fallback if value is error</span></a></li>
+        <li><a href="src/ifna.html"><span class="fn-name">ifna</span><span class="fn-desc">Returns fallback if value is #NA!</span></a></li>
+        <li><a href="src/lt.html"><span class="fn-name">lt</span><span class="fn-desc">Returns true when a < b</span></a></li>
+        <li><a href="src/lte.html"><span class="fn-name">lte</span><span class="fn-desc">Returns true when a <= b</span></a></li>
+        <li><a href="src/nand.html"><span class="fn-name">nand</span><span class="fn-desc">Returns NOT(AND(...))</span></a></li>
+        <li><a href="src/ne.html"><span class="fn-name">ne</span><span class="fn-desc">Returns true when a != b</span></a></li>
+        <li><a href="src/nor.html"><span class="fn-name">nor</span><span class="fn-desc">Returns NOT(OR(...))</span></a></li>
+        <li><a href="src/not.html"><span class="fn-name">not</span><span class="fn-desc">Negates a value</span></a></li>
+        <li><a href="src/or.html"><span class="fn-name">or</span><span class="fn-desc">Returns true when any value is true</span></a></li>
+        <li><a href="src/switch.html"><span class="fn-name">switch</span><span class="fn-desc">Matches target and returns value</span></a></li>
+        <li><a href="src/xor.html"><span class="fn-name">xor</span><span class="fn-desc">Computes exclusive or for values</span></a></li>
       </ul>
     </div>
 
     <div class="category">
       <h2>Type Checking <span class="count"></span></h2>
       <ul class="function-list" data-category="type">
-        <li><a href="src/isarray.html">isarray</a></li>
-        <li><a href="src/isasyncfunction.html">isasyncfunction</a></li>
-        <li><a href="src/isbinary.html">isbinary</a></li>
-        <li><a href="src/isblank.html">isblank</a></li>
-        <li><a href="src/isboolean.html">isboolean</a></li>
-        <li><a href="src/isdate.html">isdate</a></li>
-        <li><a href="src/isemail.html">isemail</a></li>
-        <li><a href="src/isempty.html">isempty</a></li>
-        <li><a href="src/iserr.html">iserr</a></li>
-        <li><a href="src/iserror.html">iserror</a></li>
-        <li><a href="src/iseven.html">iseven</a></li>
-        <li><a href="src/isfalsy.html">isfalsy</a></li>
-        <li><a href="src/isfunction.html">isfunction</a></li>
-        <li><a href="src/isleapyear.html">isleapyear</a></li>
-        <li><a href="src/islowercase.html">islowercase</a></li>
-        <li><a href="src/isna.html">isna</a></li>
-        <li><a href="src/isnan.html">isnan</a></li>
-        <li><a href="src/isnumber.html">isnumber</a></li>
-        <li><a href="src/isobject.html">isobject</a></li>
-        <li><a href="src/isodd.html">isodd</a></li>
-        <li><a href="src/ispromise.html">ispromise</a></li>
-        <li><a href="src/isref.html">isref</a></li>
-        <li><a href="src/istext.html">istext</a></li>
-        <li><a href="src/istruthy.html">istruthy</a></li>
-        <li><a href="src/isuppercase.html">isuppercase</a></li>
-        <li><a href="src/isurl.html">isurl</a></li>
-        <li><a href="src/iswholenumber.html">iswholenumber</a></li>
-        <li><a href="src/n.html">n</a></li>
-        <li><a href="src/parsebool.html">parsebool</a></li>
+        <li><a href="src/isarray.html"><span class="fn-name">isarray</span><span class="fn-desc">Returns true if value is an array</span></a></li>
+        <li><a href="src/isasyncfunction.html"><span class="fn-name">isasyncfunction</span><span class="fn-desc">Returns true if value is async function</span></a></li>
+        <li><a href="src/isbinary.html"><span class="fn-name">isbinary</span><span class="fn-desc">Returns true if string is binary (0/1)</span></a></li>
+        <li><a href="src/isblank.html"><span class="fn-name">isblank</span><span class="fn-desc">Returns true if value is undefined/null</span></a></li>
+        <li><a href="src/isboolean.html"><span class="fn-name">isboolean</span><span class="fn-desc">Returns true if value is boolean</span></a></li>
+        <li><a href="src/isdate.html"><span class="fn-name">isdate</span><span class="fn-desc">Returns true if value is a Date object</span></a></li>
+        <li><a href="src/isemail.html"><span class="fn-name">isemail</span><span class="fn-desc">Returns true if value is valid email</span></a></li>
+        <li><a href="src/isempty.html"><span class="fn-name">isempty</span><span class="fn-desc">Returns true if value is empty</span></a></li>
+        <li><a href="src/iserr.html"><span class="fn-name">iserr</span><span class="fn-desc">Returns true if error (except #NA!)</span></a></li>
+        <li><a href="src/iserror.html"><span class="fn-name">iserror</span><span class="fn-desc">Returns true if any value is error</span></a></li>
+        <li><a href="src/iseven.html"><span class="fn-name">iseven</span><span class="fn-desc">Returns true if value is even</span></a></li>
+        <li><a href="src/isfalsy.html"><span class="fn-name">isfalsy</span><span class="fn-desc">Returns true if value is falsy</span></a></li>
+        <li><a href="src/isfunction.html"><span class="fn-name">isfunction</span><span class="fn-desc">Returns true if value is a function</span></a></li>
+        <li><a href="src/isleapyear.html"><span class="fn-name">isleapyear</span><span class="fn-desc">Returns true if year is a leap year</span></a></li>
+        <li><a href="src/islowercase.html"><span class="fn-name">islowercase</span><span class="fn-desc">Returns true if string is lowercase</span></a></li>
+        <li><a href="src/isna.html"><span class="fn-name">isna</span><span class="fn-desc">Returns true if value is #NA!</span></a></li>
+        <li><a href="src/isnan.html"><span class="fn-name">isnan</span><span class="fn-desc">Returns true if value is NaN</span></a></li>
+        <li><a href="src/isnumber.html"><span class="fn-name">isnumber</span><span class="fn-desc">Returns true if value is finite number</span></a></li>
+        <li><a href="src/isobject.html"><span class="fn-name">isobject</span><span class="fn-desc">Returns true if value is an object</span></a></li>
+        <li><a href="src/isodd.html"><span class="fn-name">isodd</span><span class="fn-desc">Returns true if value is odd</span></a></li>
+        <li><a href="src/ispromise.html"><span class="fn-name">ispromise</span><span class="fn-desc">Returns true if value is a promise</span></a></li>
+        <li><a href="src/isref.html"><span class="fn-name">isref</span><span class="fn-desc">Returns true if value is a reference</span></a></li>
+        <li><a href="src/istext.html"><span class="fn-name">istext</span><span class="fn-desc">Returns true if value is a string</span></a></li>
+        <li><a href="src/istruthy.html"><span class="fn-name">istruthy</span><span class="fn-desc">Returns true if value is not falsy</span></a></li>
+        <li><a href="src/isuppercase.html"><span class="fn-name">isuppercase</span><span class="fn-desc">Returns true if string is uppercase</span></a></li>
+        <li><a href="src/isurl.html"><span class="fn-name">isurl</span><span class="fn-desc">Returns true if value is valid URL</span></a></li>
+        <li><a href="src/iswholenumber.html"><span class="fn-name">iswholenumber</span><span class="fn-desc">Returns true if value is whole number</span></a></li>
+        <li><a href="src/n.html"><span class="fn-name">n</span><span class="fn-desc">Converts value to a number</span></a></li>
+        <li><a href="src/parsebool.html"><span class="fn-name">parsebool</span><span class="fn-desc">Converts truthy value to boolean</span></a></li>
       </ul>
     </div>
 
     <div class="category">
       <h2>Date/Time <span class="count"></span></h2>
       <ul class="function-list" data-category="date">
-        <li><a href="src/date.html">date</a></li>
-        <li><a href="src/datedif.html">datedif</a></li>
-        <li><a href="src/datevalue.html">datevalue</a></li>
-        <li><a href="src/day.html">day</a></li>
-        <li><a href="src/days360.html">days360</a></li>
-        <li><a href="src/edate.html">edate</a></li>
-        <li><a href="src/eomonth.html">eomonth</a></li>
-        <li><a href="src/hour.html">hour</a></li>
-        <li><a href="src/isoweeknum.html">isoweeknum</a></li>
-        <li><a href="src/minute.html">minute</a></li>
-        <li><a href="src/month.html">month</a></li>
-        <li><a href="src/now.html">now</a></li>
-        <li><a href="src/parsedate.html">parsedate</a></li>
-        <li><a href="src/second.html">second</a></li>
-        <li><a href="src/serial.html">serial</a></li>
-        <li><a href="src/time.html">time</a></li>
-        <li><a href="src/timevalue.html">timevalue</a></li>
-        <li><a href="src/today.html">today</a></li>
-        <li><a href="src/unixtodate.html">unixtodate</a></li>
-        <li><a href="src/year.html">year</a></li>
-        <li><a href="src/yearfrac.html">yearfrac</a></li>
+        <li><a href="src/date.html"><span class="fn-name">date</span><span class="fn-desc">Creates a date from year, month, day</span></a></li>
+        <li><a href="src/datedif.html"><span class="fn-name">datedif</span><span class="fn-desc">Returns difference between two dates</span></a></li>
+        <li><a href="src/datevalue.html"><span class="fn-name">datevalue</span><span class="fn-desc">Parses date string to serial number</span></a></li>
+        <li><a href="src/day.html"><span class="fn-name">day</span><span class="fn-desc">Returns the day of the month</span></a></li>
+        <li><a href="src/days360.html"><span class="fn-name">days360</span><span class="fn-desc">Returns days between dates (360-day year)</span></a></li>
+        <li><a href="src/edate.html"><span class="fn-name">edate</span><span class="fn-desc">Adds months to a date</span></a></li>
+        <li><a href="src/eomonth.html"><span class="fn-name">eomonth</span><span class="fn-desc">Returns end of month date</span></a></li>
+        <li><a href="src/hour.html"><span class="fn-name">hour</span><span class="fn-desc">Returns the hour from a time</span></a></li>
+        <li><a href="src/isoweeknum.html"><span class="fn-name">isoweeknum</span><span class="fn-desc">Returns the ISO week number</span></a></li>
+        <li><a href="src/minute.html"><span class="fn-name">minute</span><span class="fn-desc">Returns the minute from a time</span></a></li>
+        <li><a href="src/month.html"><span class="fn-name">month</span><span class="fn-desc">Returns the month of the year</span></a></li>
+        <li><a href="src/now.html"><span class="fn-name">now</span><span class="fn-desc">Returns the current date and time</span></a></li>
+        <li><a href="src/parsedate.html"><span class="fn-name">parsedate</span><span class="fn-desc">Converts value to a Date object</span></a></li>
+        <li><a href="src/second.html"><span class="fn-name">second</span><span class="fn-desc">Returns the second from a time</span></a></li>
+        <li><a href="src/serial.html"><span class="fn-name">serial</span><span class="fn-desc">Converts date to serial number</span></a></li>
+        <li><a href="src/time.html"><span class="fn-name">time</span><span class="fn-desc">Creates time from hours, minutes, seconds</span></a></li>
+        <li><a href="src/timevalue.html"><span class="fn-name">timevalue</span><span class="fn-desc">Parses time string to decimal</span></a></li>
+        <li><a href="src/today.html"><span class="fn-name">today</span><span class="fn-desc">Returns the current date</span></a></li>
+        <li><a href="src/unixtodate.html"><span class="fn-name">unixtodate</span><span class="fn-desc">Converts Unix timestamp to ISO date</span></a></li>
+        <li><a href="src/year.html"><span class="fn-name">year</span><span class="fn-desc">Returns the year from a date</span></a></li>
+        <li><a href="src/yearfrac.html"><span class="fn-name">yearfrac</span><span class="fn-desc">Returns fraction of year between dates</span></a></li>
       </ul>
     </div>
 
     <div class="category">
       <h2>Lookup <span class="count"></span></h2>
       <ul class="function-list" data-category="lookup">
-        <li><a href="src/address.html">address</a></li>
-        <li><a href="src/cellindex.html">cellindex</a></li>
-        <li><a href="src/column.html">column</a></li>
-        <li><a href="src/columnletter.html">columnletter</a></li>
-        <li><a href="src/columnnumber.html">columnnumber</a></li>
-        <li><a href="src/get.html">get</a></li>
-        <li><a href="src/hlookup.html">hlookup</a></li>
-        <li><a href="src/index.html">index</a></li>
-        <li><a href="src/index2col.html">index2col</a></li>
-        <li><a href="src/index2row.html">index2row</a></li>
-        <li><a href="src/lookup.html">lookup</a></li>
-        <li><a href="src/match.html">match</a></li>
-        <li><a href="src/query.html">query</a></li>
-        <li><a href="src/ref.html">ref</a></li>
-        <li><a href="src/vlookup.html">vlookup</a></li>
+        <li><a href="src/address.html"><span class="fn-name">address</span><span class="fn-desc">Converts row/column to address (e.g. A1)</span></a></li>
+        <li><a href="src/cellindex.html"><span class="fn-name">cellindex</span><span class="fn-desc">Computes index for row/column in 2D array</span></a></li>
+        <li><a href="src/column.html"><span class="fn-name">column</span><span class="fn-desc">Returns column number from reference</span></a></li>
+        <li><a href="src/columnletter.html"><span class="fn-name">columnletter</span><span class="fn-desc">Converts index to letter (e.g. 0 -> A)</span></a></li>
+        <li><a href="src/columnnumber.html"><span class="fn-name">columnnumber</span><span class="fn-desc">Converts letter to number (e.g. A -> 0)</span></a></li>
+        <li><a href="src/get.html"><span class="fn-name">get</span><span class="fn-desc">Gets nested value from object by path</span></a></li>
+        <li><a href="src/hlookup.html"><span class="fn-name">hlookup</span><span class="fn-desc">Finds value in table horizontally</span></a></li>
+        <li><a href="src/index.html"><span class="fn-name">index</span><span class="fn-desc">Returns value at row/column position</span></a></li>
+        <li><a href="src/index2col.html"><span class="fn-name">index2col</span><span class="fn-desc">Computes column from cell index</span></a></li>
+        <li><a href="src/index2row.html"><span class="fn-name">index2row</span><span class="fn-desc">Computes row from cell index</span></a></li>
+        <li><a href="src/lookup.html"><span class="fn-name">lookup</span><span class="fn-desc">Finds a value in an array</span></a></li>
+        <li><a href="src/match.html"><span class="fn-name">match</span><span class="fn-desc">Returns index of matched value in array</span></a></li>
+        <li><a href="src/query.html"><span class="fn-name">query</span><span class="fn-desc">MongoDB-like query engine</span></a></li>
+        <li><a href="src/ref.html"><span class="fn-name">ref</span><span class="fn-desc">Creates a cell or range reference</span></a></li>
+        <li><a href="src/vlookup.html"><span class="fn-name">vlookup</span><span class="fn-desc">Finds value in table vertically</span></a></li>
       </ul>
     </div>
 
     <div class="category">
       <h2>Arrays & Objects <span class="count"></span></h2>
       <ul class="function-list" data-category="arrays">
-        <li><a href="src/assign.html">assign</a></li>
-        <li><a href="src/diff.html">diff</a></li>
-        <li><a href="src/entries.html">entries</a></li>
-        <li><a href="src/filter.html">filter</a></li>
-        <li><a href="src/flatten.html">flatten</a></li>
-        <li><a href="src/group.html">group</a></li>
-        <li><a href="src/includes.html">includes</a></li>
-        <li><a href="src/intersect.html">intersect</a></li>
-        <li><a href="src/keys.html">keys</a></li>
-        <li><a href="src/map.html">map</a></li>
-        <li><a href="src/merge.html">merge</a></li>
-        <li><a href="src/notincludes.html">notincludes</a></li>
-        <li><a href="src/numbers.html">numbers</a></li>
-        <li><a href="src/overlap.html">overlap</a></li>
-        <li><a href="src/pluck.html">pluck</a></li>
-        <li><a href="src/reduce.html">reduce</a></li>
-        <li><a href="src/select.html">select</a></li>
-        <li><a href="src/some.html">some</a></li>
-        <li><a href="src/sort.html">sort</a></li>
-        <li><a href="src/surroundKeys.html">surroundKeys</a></li>
-        <li><a href="src/unflatten.html">unflatten</a></li>
-        <li><a href="src/unique.html">unique</a></li>
-        <li><a href="src/within.html">within</a></li>
+        <li><a href="src/assign.html"><span class="fn-name">assign</span><span class="fn-desc">Merges objects (Object.assign ponyfill)</span></a></li>
+        <li><a href="src/diff.html"><span class="fn-name">diff</span><span class="fn-desc">Returns differences between two arrays</span></a></li>
+        <li><a href="src/entries.html"><span class="fn-name">entries</span><span class="fn-desc">Returns key-value pairs from object</span></a></li>
+        <li><a href="src/filter.html"><span class="fn-name">filter</span><span class="fn-desc">Filters range based on boolean arrays</span></a></li>
+        <li><a href="src/flatten.html"><span class="fn-name">flatten</span><span class="fn-desc">Converts nested array to flat array</span></a></li>
+        <li><a href="src/group.html"><span class="fn-name">group</span><span class="fn-desc">Groups objects by one or more fields</span></a></li>
+        <li><a href="src/includes.html"><span class="fn-name">includes</span><span class="fn-desc">Checks if array contains value</span></a></li>
+        <li><a href="src/intersect.html"><span class="fn-name">intersect</span><span class="fn-desc">Checks if two rectangles intersect</span></a></li>
+        <li><a href="src/keys.html"><span class="fn-name">keys</span><span class="fn-desc">Returns keys from an object</span></a></li>
+        <li><a href="src/map.html"><span class="fn-name">map</span><span class="fn-desc">Transforms each element in array</span></a></li>
+        <li><a href="src/merge.html"><span class="fn-name">merge</span><span class="fn-desc">Deep merges objects together</span></a></li>
+        <li><a href="src/notincludes.html"><span class="fn-name">notincludes</span><span class="fn-desc">Checks if array doesn't contain value</span></a></li>
+        <li><a href="src/numbers.html"><span class="fn-name">numbers</span><span class="fn-desc">Filters non-numeric values from array</span></a></li>
+        <li><a href="src/overlap.html"><span class="fn-name">overlap</span><span class="fn-desc">Returns common elements between arrays</span></a></li>
+        <li><a href="src/pluck.html"><span class="fn-name">pluck</span><span class="fn-desc">Extracts property from array of objects</span></a></li>
+        <li><a href="src/reduce.html"><span class="fn-name">reduce</span><span class="fn-desc">Reduces array to single value</span></a></li>
+        <li><a href="src/select.html"><span class="fn-name">select</span><span class="fn-desc">Selects fields from an object</span></a></li>
+        <li><a href="src/some.html"><span class="fn-name">some</span><span class="fn-desc">Returns true if any element matches</span></a></li>
+        <li><a href="src/sort.html"><span class="fn-name">sort</span><span class="fn-desc">Sorts an array of objects</span></a></li>
+        <li><a href="src/surroundKeys.html"><span class="fn-name">surroundKeys</span><span class="fn-desc">Wraps object keys with delimiters</span></a></li>
+        <li><a href="src/unflatten.html"><span class="fn-name">unflatten</span><span class="fn-desc">Converts flat object to nested</span></a></li>
+        <li><a href="src/unique.html"><span class="fn-name">unique</span><span class="fn-desc">Removes duplicate values from array</span></a></li>
+        <li><a href="src/within.html"><span class="fn-name">within</span><span class="fn-desc">Checks if value is within range</span></a></li>
       </ul>
     </div>
 
     <div class="category">
       <h2>Finance <span class="count"></span></h2>
       <ul class="function-list" data-category="finance">
-        <li><a href="src/accrint.html">accrint</a></li>
-        <li><a href="src/cumipmt.html">cumipmt</a></li>
-        <li><a href="src/fv.html">fv</a></li>
-        <li><a href="src/ipmt.html">ipmt</a></li>
-        <li><a href="src/nper.html">nper</a></li>
-        <li><a href="src/npv.html">npv</a></li>
-        <li><a href="src/pmt.html">pmt</a></li>
-        <li><a href="src/pv.html">pv</a></li>
+        <li><a href="src/accrint.html"><span class="fn-name">accrint</span><span class="fn-desc">Returns accrued interest for a security</span></a></li>
+        <li><a href="src/cumipmt.html"><span class="fn-name">cumipmt</span><span class="fn-desc">Returns cumulative interest paid</span></a></li>
+        <li><a href="src/fv.html"><span class="fn-name">fv</span><span class="fn-desc">Returns future value of investment</span></a></li>
+        <li><a href="src/ipmt.html"><span class="fn-name">ipmt</span><span class="fn-desc">Returns interest payment for period</span></a></li>
+        <li><a href="src/nper.html"><span class="fn-name">nper</span><span class="fn-desc">Returns number of payment periods</span></a></li>
+        <li><a href="src/npv.html"><span class="fn-name">npv</span><span class="fn-desc">Returns net present value</span></a></li>
+        <li><a href="src/pmt.html"><span class="fn-name">pmt</span><span class="fn-desc">Returns loan payment amount</span></a></li>
+        <li><a href="src/pv.html"><span class="fn-name">pv</span><span class="fn-desc">Returns present value of investment</span></a></li>
       </ul>
     </div>
 
     <div class="category">
       <h2>Utilities <span class="count"></span></h2>
       <ul class="function-list" data-category="util">
-        <li><a href="src/changed.html">changed</a></li>
-        <li><a href="src/decodebase64.html">decodebase64</a></li>
-        <li><a href="src/decodejwt.html">decodejwt</a></li>
-        <li><a href="src/guid.html">guid</a></li>
-        <li><a href="src/interpolate.html">interpolate</a></li>
-        <li><a href="src/interpolator.html">interpolator</a></li>
-        <li><a href="src/numbervalue.html">numbervalue</a></li>
-        <li><a href="src/parsequery.html">parsequery</a></li>
+        <li><a href="src/changed.html"><span class="fn-name">changed</span><span class="fn-desc">Lists keys that differ between objects</span></a></li>
+        <li><a href="src/decodebase64.html"><span class="fn-name">decodebase64</span><span class="fn-desc">Decodes a base64 encoded string</span></a></li>
+        <li><a href="src/decodejwt.html"><span class="fn-name">decodejwt</span><span class="fn-desc">Decodes a JSON Web Token</span></a></li>
+        <li><a href="src/guid.html"><span class="fn-name">guid</span><span class="fn-desc">Generates a unique identifier</span></a></li>
+        <li><a href="src/interpolate.html"><span class="fn-name">interpolate</span><span class="fn-desc">Computes value at percentage between a and b</span></a></li>
+        <li><a href="src/interpolator.html"><span class="fn-name">interpolator</span><span class="fn-desc">Creates interpolation function for a and b</span></a></li>
+        <li><a href="src/numbervalue.html"><span class="fn-name">numbervalue</span><span class="fn-desc">Converts text value to number</span></a></li>
+        <li><a href="src/parsequery.html"><span class="fn-name">parsequery</span><span class="fn-desc">Parses URL query string to object</span></a></li>
       </ul>
     </div>
 
     <div class="category">
       <h2>Core <span class="count"></span></h2>
       <ul class="function-list" data-category="core">
-        <li><a href="src/compile.html">compile</a></li>
-        <li><a href="src/run.html">run</a></li>
-        <li><a href="src/parser.html">parser</a></li>
-        <li><a href="src/walker.html">walker</a></li>
-        <li><a href="src/error.html">error</a></li>
-        <li><a href="src/constants.html">constants</a></li>
-        <li><a href="src/functions.html">functions</a></li>
+        <li><a href="src/compile.html"><span class="fn-name">compile</span><span class="fn-desc">Compiles formula expression to function</span></a></li>
+        <li><a href="src/run.html"><span class="fn-name">run</span><span class="fn-desc">Executes a formula expression</span></a></li>
+        <li><a href="src/parser.html"><span class="fn-name">parser</span><span class="fn-desc">Parses formula string to AST</span></a></li>
+        <li><a href="src/walker.html"><span class="fn-name">walker</span><span class="fn-desc">Converts AST into executable function</span></a></li>
+        <li><a href="src/error.html"><span class="fn-name">error</span><span class="fn-desc">Spreadsheet error types (#VALUE!, etc.)</span></a></li>
+        <li><a href="src/constants.html"><span class="fn-name">constants</span><span class="fn-desc">Shared constant values</span></a></li>
+        <li><a href="src/functions.html"><span class="fn-name">functions</span><span class="fn-desc">Exports all library functions</span></a></li>
       </ul>
     </div>
 
@@ -389,8 +405,9 @@
       searchInput.addEventListener("input", function () {
         const query = this.value.toLowerCase();
         allItems.forEach((item) => {
-          const text = item.textContent.toLowerCase();
-          item.classList.toggle("hidden", !text.includes(query));
+          const name = item.querySelector(".fn-name")?.textContent.toLowerCase() || "";
+          const desc = item.querySelector(".fn-desc")?.textContent.toLowerCase() || "";
+          item.classList.toggle("hidden", !name.includes(query) && !desc.includes(query));
         });
         updateCounts();
       });
