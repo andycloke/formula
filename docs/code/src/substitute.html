@@ -1025,7 +1025,7 @@
 						</div>
 						
 						<div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">substitute</span>(<span class="hljs-params">text, old_text, new_text, occurrence</span>) </span>{
-  <span class="hljs-keyword">if</span> (!text || !old_text || !new_text) {
+  <span class="hljs-keyword">if</span> (!text || !old_text || new_text == null) {
     <span class="hljs-keyword">return</span> text;
   } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (occurrence === <span class="hljs-literal">undefined</span>) {
     <span class="hljs-keyword">return</span> text.replace(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(old_text, <span class="hljs-string">"g"</span>), new_text);
