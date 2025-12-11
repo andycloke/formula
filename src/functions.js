@@ -582,6 +582,18 @@ export { default as trim } from "./trim";
 export { default as UPPER } from "./upper";
 export { default as upper } from "./upper";
 
+// #### [removestart](./removestart)
+// `removestart` removes a given number of characters from the start of a string.
+export { default as REMOVESTART } from "./removestart";
+export { default as removeStart } from "./removestart";
+export { default as removestart } from "./removestart";
+
+// #### [removeend](./removeend)
+// `removeend` removes a given number of characters from the end of a string.
+export { default as REMOVEEND } from "./removeend";
+export { default as removeEnd } from "./removeend";
+export { default as removeend } from "./removeend";
+
 // ### Lookup and reference
 
 // #### [hlookup](./hlookup)
