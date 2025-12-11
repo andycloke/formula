@@ -31,21 +31,11 @@ jobs:
 
       - name: Build docs
         run: |
+          # Save the custom index page
+          cp ./docs/code/index.html ./docs/code/index.html.bak
           npm run docs
-          # Replace empty documentation.js index with redirect to Docco docs
-          cat > ./docs/code/index.html << 'EOF'
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="refresh" content="0; url=src/functions.html">
-            <title>Formula Documentation</title>
-          </head>
-          <body>
-            <p>Redirecting to <a href="src/functions.html">documentation</a>...</p>
-          </body>
-          </html>
-          EOF
+          # Restore the custom index page (documentation.js overwrites it)
+          mv ./docs/code/index.html.bak ./docs/code/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
