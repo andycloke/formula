@@ -719,6 +719,11 @@ export { default as year } from "./year";
 export { default as YEARFRAC } from "./yearfrac";
 export { default as yearfrac } from "./yearfrac";
 
+// #### [unixtodate](./unixtodate)
+// `unixtodate` converts a Unix timestamp to an ISO 8601 date string.
+export { default as UNIXTODATE } from "./unixtodate";
+export { default as unixtodate } from "./unixtodate";
+
 // ### Aggregation
 
 // #### [average](./average)

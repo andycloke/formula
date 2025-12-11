@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>unixtodate.js</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" media="all" href="../docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    <ul class="sections">
+      <li id="title">
+        <div class="annotation"><h1>unixtodate.js</h1></div>
+      </li>
+      <li id="section-1">
+        <div class="annotation">
+          <div class="pilwrap"><a class="pilcrow" href="#section-1">&#182;</a></div>
+          <p>UNIXTODATE converts a Unix timestamp (seconds since epoch) to an ISO 8601 date string.</p>
+        </div>
+        <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">import</span> isblank <span class="hljs-keyword">from</span> <span class="hljs-string">"./isblank"</span>;
+<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">"./error"</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unixtodate</span>(<span class="hljs-params">timestamp</span>) </span>{
+  <span class="hljs-keyword">if</span> (isblank(timestamp)) {
+    <span class="hljs-keyword">return</span> error.value;
+  }
+  <span class="hljs-keyword">const</span> num = <span class="hljs-built_in">Number</span>(timestamp);
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(num) || !<span class="hljs-built_in">isFinite</span>(num)) {
+    <span class="hljs-keyword">return</span> error.value;
+  }
+  <span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(num * <span class="hljs-number">1000</span>);
+  <span class="hljs-keyword">return</span> date.toISOString();
+}</pre></div></div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

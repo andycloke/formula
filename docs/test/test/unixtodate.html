@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>unixtodate.js</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" media="all" href="../docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    <ul class="sections">
+      <li id="title">
+        <div class="annotation"><h1>unixtodate.js</h1></div>
+      </li>
+      <li id="section-1">
+        <div class="annotation">
+          <div class="pilwrap"><a class="pilcrow" href="#section-1">&#182;</a></div>
+        </div>
+        <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">"tape"</span>;
+<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/error"</span>;
+<span class="hljs-keyword">import</span> unixtodate <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/unixtodate"</span>;
+
+test(<span class="hljs-string">"unixtodate"</span>, t =&gt; {
+  t.plan(<span class="hljs-number">5</span>);
+  t.equal(unixtodate(<span class="hljs-number">946684800</span>), <span class="hljs-string">"2000-01-01T00:00:00.000Z"</span>);
+  t.equal(unixtodate(<span class="hljs-number">0</span>), <span class="hljs-string">"1970-01-01T00:00:00.000Z"</span>);
+  t.equal(unixtodate(<span class="hljs-number">1704067200</span>), <span class="hljs-string">"2024-01-01T00:00:00.000Z"</span>);
+  t.equal(unixtodate(), error.value);
+  t.equal(unixtodate(<span class="hljs-string">"invalid"</span>), error.value);
+});</pre></div></div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

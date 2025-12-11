@@ -745,3 +745,9 @@ export function yearfrac(
   end_date: string | number | Date,
   basis?: basisOptions
 ): number;
+
+/** Convert Unix timestamp (seconds since epoch) to ISO 8601 date string. */
+export function UNIXTODATE(timestamp: number): string;
+
+/** Convert Unix timestamp (seconds since epoch) to ISO 8601 date string. */
+export function unixtodate(timestamp: number): string;
