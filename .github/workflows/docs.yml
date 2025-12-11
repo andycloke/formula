@@ -30,7 +30,22 @@ jobs:
         run: npm ci
 
       - name: Build docs
-        run: npm run docs
+        run: |
+          npm run docs
+          # Replace empty documentation.js index with redirect to Docco docs
+          cat > ./docs/code/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="refresh" content="0; url=src/functions.html">
+            <title>Formula Documentation</title>
+          </head>
+          <body>
+            <p>Redirecting to <a href="src/functions.html">documentation</a>...</p>
+          </body>
+          </html>
+          EOF
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
