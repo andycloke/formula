@@ -7,7 +7,7 @@
   "scripts": {
     "all": "npm run build && npm test",
     "test": "buble-tape-runner test/*.js",
-    "docs": "documentation src/*.js -o ./docs/code; documentation test/*.js -o ./docs/test",
+    "docs": "documentation build src/*.js -f html -o ./docs/code; documentation build test/*.js -f html -o ./docs/test",
     "clean": "rm -rf lib;",
     "build": "BABEL_ENV=production npm run build:umd && npm run build:min && npm run docs; rm lib/formula.mjs.js; rm lib/formula.js",
     "build:parser": "jison src/parser.jison -m commonjs -o src/parser.js",
