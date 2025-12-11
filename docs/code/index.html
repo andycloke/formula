@@ -1,390 +1,401 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Formula - Function Library Documentation</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" media="all" href="docco.css" />
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      background: #f5f5f5;
-    }
-    h1 {
-      color: #333;
-      border-bottom: 2px solid #e74c3c;
-      padding-bottom: 10px;
-    }
-    .intro {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-    .intro p {
-      color: #666;
-      line-height: 1.6;
-    }
-    .search-box {
-      width: 100%;
-      padding: 12px 16px;
-      font-size: 16px;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-sizing: border-box;
-    }
-    .search-box:focus {
-      outline: none;
-      border-color: #e74c3c;
-    }
-    .category {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-    .category h2 {
-      color: #e74c3c;
-      margin-top: 0;
-      font-size: 18px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .function-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 8px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .function-list a {
-      display: block;
-      padding: 8px 12px;
-      background: #f8f8f8;
-      color: #333;
-      text-decoration: none;
-      border-radius: 4px;
-      font-family: monospace;
-      font-size: 14px;
-      transition: all 0.2s;
-    }
-    .function-list a:hover {
-      background: #e74c3c;
-      color: #fff;
-    }
-    .function-list li.hidden {
-      display: none;
-    }
-    .count {
-      color: #999;
-      font-size: 14px;
-      margin-left: 10px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Formula</h1>
+  <head>
+    <title>Formula - Function Library Documentation</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" media="all" href="docco.css" />
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background: #f5f5f5;
+      }
+      h1 {
+        color: #333;
+        border-bottom: 2px solid #e74c3c;
+        padding-bottom: 10px;
+      }
+      .intro {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .intro p {
+        color: #666;
+        line-height: 1.6;
+      }
+      .search-box {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+      .search-box:focus {
+        outline: none;
+        border-color: #e74c3c;
+      }
+      .category {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .category h2 {
+        color: #e74c3c;
+        margin-top: 0;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .function-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 8px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .function-list a {
+        display: block;
+        padding: 8px 12px;
+        background: #f8f8f8;
+        color: #333;
+        text-decoration: none;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 14px;
+        transition: all 0.2s;
+      }
+      .function-list a:hover {
+        background: #e74c3c;
+        color: #fff;
+      }
+      .function-list li.hidden {
+        display: none;
+      }
+      .count {
+        color: #999;
+        font-size: 14px;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Formula</h1>
 
-  <div class="intro">
-    <p>Formula is a compiler and function library for spreadsheet-like expressions. It includes functions for logic, math, text, lookup, date/time, aggregation, arrays, objects, finance, statistics and other utilities.</p>
-    <p>View the main entry point: <a href="src/functions.html"><strong>functions.js</strong></a></p>
-  </div>
+    <div class="intro">
+      <p>
+        Formula is a compiler and function library for spreadsheet-like
+        expressions. It includes functions for logic, math, text, lookup,
+        date/time, aggregation, arrays, objects, finance, statistics and other
+        utilities.
+      </p>
+    </div>
 
-  <input type="search" id="search" class="search-box" placeholder="Filter functions..." autofocus>
+    <input
+      type="search"
+      id="search"
+      class="search-box"
+      placeholder="Filter functions..."
+      autofocus
+    />
 
-  <div class="category">
-    <h2>Core <span class="count"></span></h2>
-    <ul class="function-list" data-category="core">
-      <li><a href="src/compile.html">compile</a></li>
-      <li><a href="src/run.html">run</a></li>
-      <li><a href="src/parser.html">parser</a></li>
-      <li><a href="src/walker.html">walker</a></li>
-      <li><a href="src/error.html">error</a></li>
-      <li><a href="src/constants.html">constants</a></li>
-      <li><a href="src/functions.html">functions</a></li>
-    </ul>
-  </div>
+    <div class="category">
+      <h2>Core <span class="count"></span></h2>
+      <ul class="function-list" data-category="core">
+        <li><a href="src/compile.html">compile</a></li>
+        <li><a href="src/run.html">run</a></li>
+        <li><a href="src/parser.html">parser</a></li>
+        <li><a href="src/walker.html">walker</a></li>
+        <li><a href="src/error.html">error</a></li>
+        <li><a href="src/constants.html">constants</a></li>
+        <li><a href="src/functions.html">functions</a></li>
+      </ul>
+    </div>
 
-  <div class="category">
-    <h2>Math <span class="count"></span></h2>
-    <ul class="function-list" data-category="math">
-      <li><a href="src/abs.html">abs</a></li>
-      <li><a href="src/add.html">add</a></li>
-      <li><a href="src/acos.html">acos</a></li>
-      <li><a href="src/acosh.html">acosh</a></li>
-      <li><a href="src/acot.html">acot</a></li>
-      <li><a href="src/acoth.html">acoth</a></li>
-      <li><a href="src/asin.html">asin</a></li>
-      <li><a href="src/asinh.html">asinh</a></li>
-      <li><a href="src/atan.html">atan</a></li>
-      <li><a href="src/atan2.html">atan2</a></li>
-      <li><a href="src/atanh.html">atanh</a></li>
-      <li><a href="src/average.html">average</a></li>
-      <li><a href="src/base.html">base</a></li>
-      <li><a href="src/bin2dec.html">bin2dec</a></li>
-      <li><a href="src/ceiling.html">ceiling</a></li>
-      <li><a href="src/cos.html">cos</a></li>
-      <li><a href="src/dec2bin.html">dec2bin</a></li>
-      <li><a href="src/degrees.html">degrees</a></li>
-      <li><a href="src/divide.html">divide</a></li>
-      <li><a href="src/even.html">even</a></li>
-      <li><a href="src/floor.html">floor</a></li>
-      <li><a href="src/int.html">int</a></li>
-      <li><a href="src/max.html">max</a></li>
-      <li><a href="src/min.html">min</a></li>
-      <li><a href="src/minus.html">minus</a></li>
-      <li><a href="src/mod.html">mod</a></li>
-      <li><a href="src/multiply.html">multiply</a></li>
-      <li><a href="src/oct2dec.html">oct2dec</a></li>
-      <li><a href="src/pi.html">pi</a></li>
-      <li><a href="src/plus.html">plus</a></li>
-      <li><a href="src/power.html">power</a></li>
-      <li><a href="src/round.html">round</a></li>
-      <li><a href="src/roundup.html">roundup</a></li>
-      <li><a href="src/sin.html">sin</a></li>
-      <li><a href="src/subtract.html">subtract</a></li>
-      <li><a href="src/sum.html">sum</a></li>
-      <li><a href="src/tan.html">tan</a></li>
-      <li><a href="src/tau.html">tau</a></li>
-      <li><a href="src/trunc.html">trunc</a></li>
-    </ul>
-  </div>
+    <div class="category">
+      <h2>Math <span class="count"></span></h2>
+      <ul class="function-list" data-category="math">
+        <li><a href="src/abs.html">abs</a></li>
+        <li><a href="src/add.html">add</a></li>
+        <li><a href="src/acos.html">acos</a></li>
+        <li><a href="src/acosh.html">acosh</a></li>
+        <li><a href="src/acot.html">acot</a></li>
+        <li><a href="src/acoth.html">acoth</a></li>
+        <li><a href="src/asin.html">asin</a></li>
+        <li><a href="src/asinh.html">asinh</a></li>
+        <li><a href="src/atan.html">atan</a></li>
+        <li><a href="src/atan2.html">atan2</a></li>
+        <li><a href="src/atanh.html">atanh</a></li>
+        <li><a href="src/average.html">average</a></li>
+        <li><a href="src/base.html">base</a></li>
+        <li><a href="src/bin2dec.html">bin2dec</a></li>
+        <li><a href="src/ceiling.html">ceiling</a></li>
+        <li><a href="src/cos.html">cos</a></li>
+        <li><a href="src/dec2bin.html">dec2bin</a></li>
+        <li><a href="src/degrees.html">degrees</a></li>
+        <li><a href="src/divide.html">divide</a></li>
+        <li><a href="src/even.html">even</a></li>
+        <li><a href="src/floor.html">floor</a></li>
+        <li><a href="src/int.html">int</a></li>
+        <li><a href="src/max.html">max</a></li>
+        <li><a href="src/min.html">min</a></li>
+        <li><a href="src/minus.html">minus</a></li>
+        <li><a href="src/mod.html">mod</a></li>
+        <li><a href="src/multiply.html">multiply</a></li>
+        <li><a href="src/oct2dec.html">oct2dec</a></li>
+        <li><a href="src/pi.html">pi</a></li>
+        <li><a href="src/plus.html">plus</a></li>
+        <li><a href="src/power.html">power</a></li>
+        <li><a href="src/round.html">round</a></li>
+        <li><a href="src/roundup.html">roundup</a></li>
+        <li><a href="src/sin.html">sin</a></li>
+        <li><a href="src/subtract.html">subtract</a></li>
+        <li><a href="src/sum.html">sum</a></li>
+        <li><a href="src/tan.html">tan</a></li>
+        <li><a href="src/tau.html">tau</a></li>
+        <li><a href="src/trunc.html">trunc</a></li>
+      </ul>
+    </div>
 
-  <div class="category">
-    <h2>Text <span class="count"></span></h2>
-    <ul class="function-list" data-category="text">
-      <li><a href="src/camelcase.html">camelcase</a></li>
-      <li><a href="src/char.html">char</a></li>
-      <li><a href="src/clean.html">clean</a></li>
-      <li><a href="src/code.html">code</a></li>
-      <li><a href="src/concatenate.html">concatenate</a></li>
-      <li><a href="src/exact.html">exact</a></li>
-      <li><a href="src/find.html">find</a></li>
-      <li><a href="src/hash.html">hash</a></li>
-      <li><a href="src/join.html">join</a></li>
-      <li><a href="src/left.html">left</a></li>
-      <li><a href="src/len.html">len</a></li>
-      <li><a href="src/lower.html">lower</a></li>
-      <li><a href="src/proper.html">proper</a></li>
-      <li><a href="src/removeend.html">removeend</a></li>
-      <li><a href="src/removestart.html">removestart</a></li>
-      <li><a href="src/replace.html">replace</a></li>
-      <li><a href="src/rept.html">rept</a></li>
-      <li><a href="src/right.html">right</a></li>
-      <li><a href="src/search.html">search</a></li>
-      <li><a href="src/snakecase.html">snakecase</a></li>
-      <li><a href="src/split.html">split</a></li>
-      <li><a href="src/substitute.html">substitute</a></li>
-      <li><a href="src/substituteAll.html">substituteAll</a></li>
-      <li><a href="src/text.html">text</a></li>
-      <li><a href="src/trim.html">trim</a></li>
-      <li><a href="src/upper.html">upper</a></li>
-    </ul>
-  </div>
+    <div class="category">
+      <h2>Text <span class="count"></span></h2>
+      <ul class="function-list" data-category="text">
+        <li><a href="src/camelcase.html">camelcase</a></li>
+        <li><a href="src/char.html">char</a></li>
+        <li><a href="src/clean.html">clean</a></li>
+        <li><a href="src/code.html">code</a></li>
+        <li><a href="src/concatenate.html">concatenate</a></li>
+        <li><a href="src/exact.html">exact</a></li>
+        <li><a href="src/find.html">find</a></li>
+        <li><a href="src/hash.html">hash</a></li>
+        <li><a href="src/join.html">join</a></li>
+        <li><a href="src/left.html">left</a></li>
+        <li><a href="src/len.html">len</a></li>
+        <li><a href="src/lower.html">lower</a></li>
+        <li><a href="src/proper.html">proper</a></li>
+        <li><a href="src/removeend.html">removeend</a></li>
+        <li><a href="src/removestart.html">removestart</a></li>
+        <li><a href="src/replace.html">replace</a></li>
+        <li><a href="src/rept.html">rept</a></li>
+        <li><a href="src/right.html">right</a></li>
+        <li><a href="src/search.html">search</a></li>
+        <li><a href="src/snakecase.html">snakecase</a></li>
+        <li><a href="src/split.html">split</a></li>
+        <li><a href="src/substitute.html">substitute</a></li>
+        <li><a href="src/substituteAll.html">substituteAll</a></li>
+        <li><a href="src/text.html">text</a></li>
+        <li><a href="src/trim.html">trim</a></li>
+        <li><a href="src/upper.html">upper</a></li>
+      </ul>
+    </div>
 
-  <div class="category">
-    <h2>Logic <span class="count"></span></h2>
-    <ul class="function-list" data-category="logic">
-      <li><a href="src/and.html">and</a></li>
-      <li><a href="src/branch.html">branch</a></li>
-      <li><a href="src/choose.html">choose</a></li>
-      <li><a href="src/eq.html">eq</a></li>
-      <li><a href="src/gt.html">gt</a></li>
-      <li><a href="src/gte.html">gte</a></li>
-      <li><a href="src/identity.html">identity</a></li>
-      <li><a href="src/ifblank.html">ifblank</a></li>
-      <li><a href="src/ifempty.html">ifempty</a></li>
-      <li><a href="src/iferror.html">iferror</a></li>
-      <li><a href="src/ifna.html">ifna</a></li>
-      <li><a href="src/lt.html">lt</a></li>
-      <li><a href="src/lte.html">lte</a></li>
-      <li><a href="src/nand.html">nand</a></li>
-      <li><a href="src/ne.html">ne</a></li>
-      <li><a href="src/nor.html">nor</a></li>
-      <li><a href="src/not.html">not</a></li>
-      <li><a href="src/or.html">or</a></li>
-      <li><a href="src/switch.html">switch</a></li>
-      <li><a href="src/xor.html">xor</a></li>
-    </ul>
-  </div>
+    <div class="category">
+      <h2>Logic <span class="count"></span></h2>
+      <ul class="function-list" data-category="logic">
+        <li><a href="src/and.html">and</a></li>
+        <li><a href="src/branch.html">branch</a></li>
+        <li><a href="src/choose.html">choose</a></li>
+        <li><a href="src/eq.html">eq</a></li>
+        <li><a href="src/gt.html">gt</a></li>
+        <li><a href="src/gte.html">gte</a></li>
+        <li><a href="src/identity.html">identity</a></li>
+        <li><a href="src/ifblank.html">ifblank</a></li>
+        <li><a href="src/ifempty.html">ifempty</a></li>
+        <li><a href="src/iferror.html">iferror</a></li>
+        <li><a href="src/ifna.html">ifna</a></li>
+        <li><a href="src/lt.html">lt</a></li>
+        <li><a href="src/lte.html">lte</a></li>
+        <li><a href="src/nand.html">nand</a></li>
+        <li><a href="src/ne.html">ne</a></li>
+        <li><a href="src/nor.html">nor</a></li>
+        <li><a href="src/not.html">not</a></li>
+        <li><a href="src/or.html">or</a></li>
+        <li><a href="src/switch.html">switch</a></li>
+        <li><a href="src/xor.html">xor</a></li>
+      </ul>
+    </div>
 
-  <div class="category">
-    <h2>Type Checking <span class="count"></span></h2>
-    <ul class="function-list" data-category="type">
-      <li><a href="src/isarray.html">isarray</a></li>
-      <li><a href="src/isasyncfunction.html">isasyncfunction</a></li>
-      <li><a href="src/isbinary.html">isbinary</a></li>
-      <li><a href="src/isblank.html">isblank</a></li>
-      <li><a href="src/isboolean.html">isboolean</a></li>
-      <li><a href="src/isdate.html">isdate</a></li>
-      <li><a href="src/isemail.html">isemail</a></li>
-      <li><a href="src/isempty.html">isempty</a></li>
-      <li><a href="src/iserr.html">iserr</a></li>
-      <li><a href="src/iserror.html">iserror</a></li>
-      <li><a href="src/iseven.html">iseven</a></li>
-      <li><a href="src/isfalsy.html">isfalsy</a></li>
-      <li><a href="src/isfunction.html">isfunction</a></li>
-      <li><a href="src/isleapyear.html">isleapyear</a></li>
-      <li><a href="src/islowercase.html">islowercase</a></li>
-      <li><a href="src/isna.html">isna</a></li>
-      <li><a href="src/isnan.html">isnan</a></li>
-      <li><a href="src/isnumber.html">isnumber</a></li>
-      <li><a href="src/isobject.html">isobject</a></li>
-      <li><a href="src/isodd.html">isodd</a></li>
-      <li><a href="src/ispromise.html">ispromise</a></li>
-      <li><a href="src/isref.html">isref</a></li>
-      <li><a href="src/istext.html">istext</a></li>
-      <li><a href="src/istruthy.html">istruthy</a></li>
-      <li><a href="src/isuppercase.html">isuppercase</a></li>
-      <li><a href="src/isurl.html">isurl</a></li>
-      <li><a href="src/iswholenumber.html">iswholenumber</a></li>
-      <li><a href="src/n.html">n</a></li>
-      <li><a href="src/parsebool.html">parsebool</a></li>
-    </ul>
-  </div>
+    <div class="category">
+      <h2>Type Checking <span class="count"></span></h2>
+      <ul class="function-list" data-category="type">
+        <li><a href="src/isarray.html">isarray</a></li>
+        <li><a href="src/isasyncfunction.html">isasyncfunction</a></li>
+        <li><a href="src/isbinary.html">isbinary</a></li>
+        <li><a href="src/isblank.html">isblank</a></li>
+        <li><a href="src/isboolean.html">isboolean</a></li>
+        <li><a href="src/isdate.html">isdate</a></li>
+        <li><a href="src/isemail.html">isemail</a></li>
+        <li><a href="src/isempty.html">isempty</a></li>
+        <li><a href="src/iserr.html">iserr</a></li>
+        <li><a href="src/iserror.html">iserror</a></li>
+        <li><a href="src/iseven.html">iseven</a></li>
+        <li><a href="src/isfalsy.html">isfalsy</a></li>
+        <li><a href="src/isfunction.html">isfunction</a></li>
+        <li><a href="src/isleapyear.html">isleapyear</a></li>
+        <li><a href="src/islowercase.html">islowercase</a></li>
+        <li><a href="src/isna.html">isna</a></li>
+        <li><a href="src/isnan.html">isnan</a></li>
+        <li><a href="src/isnumber.html">isnumber</a></li>
+        <li><a href="src/isobject.html">isobject</a></li>
+        <li><a href="src/isodd.html">isodd</a></li>
+        <li><a href="src/ispromise.html">ispromise</a></li>
+        <li><a href="src/isref.html">isref</a></li>
+        <li><a href="src/istext.html">istext</a></li>
+        <li><a href="src/istruthy.html">istruthy</a></li>
+        <li><a href="src/isuppercase.html">isuppercase</a></li>
+        <li><a href="src/isurl.html">isurl</a></li>
+        <li><a href="src/iswholenumber.html">iswholenumber</a></li>
+        <li><a href="src/n.html">n</a></li>
+        <li><a href="src/parsebool.html">parsebool</a></li>
+      </ul>
+    </div>
 
-  <div class="category">
-    <h2>Date/Time <span class="count"></span></h2>
-    <ul class="function-list" data-category="date">
-      <li><a href="src/date.html">date</a></li>
-      <li><a href="src/datedif.html">datedif</a></li>
-      <li><a href="src/datevalue.html">datevalue</a></li>
-      <li><a href="src/day.html">day</a></li>
-      <li><a href="src/days360.html">days360</a></li>
-      <li><a href="src/edate.html">edate</a></li>
-      <li><a href="src/eomonth.html">eomonth</a></li>
-      <li><a href="src/hour.html">hour</a></li>
-      <li><a href="src/isoweeknum.html">isoweeknum</a></li>
-      <li><a href="src/minute.html">minute</a></li>
-      <li><a href="src/month.html">month</a></li>
-      <li><a href="src/now.html">now</a></li>
-      <li><a href="src/parsedate.html">parsedate</a></li>
-      <li><a href="src/second.html">second</a></li>
-      <li><a href="src/serial.html">serial</a></li>
-      <li><a href="src/time.html">time</a></li>
-      <li><a href="src/timevalue.html">timevalue</a></li>
-      <li><a href="src/today.html">today</a></li>
-      <li><a href="src/unixtodate.html">unixtodate</a></li>
-      <li><a href="src/year.html">year</a></li>
-      <li><a href="src/yearfrac.html">yearfrac</a></li>
-    </ul>
-  </div>
+    <div class="category">
+      <h2>Date/Time <span class="count"></span></h2>
+      <ul class="function-list" data-category="date">
+        <li><a href="src/date.html">date</a></li>
+        <li><a href="src/datedif.html">datedif</a></li>
+        <li><a href="src/datevalue.html">datevalue</a></li>
+        <li><a href="src/day.html">day</a></li>
+        <li><a href="src/days360.html">days360</a></li>
+        <li><a href="src/edate.html">edate</a></li>
+        <li><a href="src/eomonth.html">eomonth</a></li>
+        <li><a href="src/hour.html">hour</a></li>
+        <li><a href="src/isoweeknum.html">isoweeknum</a></li>
+        <li><a href="src/minute.html">minute</a></li>
+        <li><a href="src/month.html">month</a></li>
+        <li><a href="src/now.html">now</a></li>
+        <li><a href="src/parsedate.html">parsedate</a></li>
+        <li><a href="src/second.html">second</a></li>
+        <li><a href="src/serial.html">serial</a></li>
+        <li><a href="src/time.html">time</a></li>
+        <li><a href="src/timevalue.html">timevalue</a></li>
+        <li><a href="src/today.html">today</a></li>
+        <li><a href="src/unixtodate.html">unixtodate</a></li>
+        <li><a href="src/year.html">year</a></li>
+        <li><a href="src/yearfrac.html">yearfrac</a></li>
+      </ul>
+    </div>
 
-  <div class="category">
-    <h2>Lookup <span class="count"></span></h2>
-    <ul class="function-list" data-category="lookup">
-      <li><a href="src/address.html">address</a></li>
-      <li><a href="src/cellindex.html">cellindex</a></li>
-      <li><a href="src/column.html">column</a></li>
-      <li><a href="src/columnletter.html">columnletter</a></li>
-      <li><a href="src/columnnumber.html">columnnumber</a></li>
-      <li><a href="src/get.html">get</a></li>
-      <li><a href="src/hlookup.html">hlookup</a></li>
-      <li><a href="src/index.html">index</a></li>
-      <li><a href="src/index2col.html">index2col</a></li>
-      <li><a href="src/index2row.html">index2row</a></li>
-      <li><a href="src/lookup.html">lookup</a></li>
-      <li><a href="src/match.html">match</a></li>
-      <li><a href="src/query.html">query</a></li>
-      <li><a href="src/ref.html">ref</a></li>
-      <li><a href="src/vlookup.html">vlookup</a></li>
-    </ul>
-  </div>
+    <div class="category">
+      <h2>Lookup <span class="count"></span></h2>
+      <ul class="function-list" data-category="lookup">
+        <li><a href="src/address.html">address</a></li>
+        <li><a href="src/cellindex.html">cellindex</a></li>
+        <li><a href="src/column.html">column</a></li>
+        <li><a href="src/columnletter.html">columnletter</a></li>
+        <li><a href="src/columnnumber.html">columnnumber</a></li>
+        <li><a href="src/get.html">get</a></li>
+        <li><a href="src/hlookup.html">hlookup</a></li>
+        <li><a href="src/index.html">index</a></li>
+        <li><a href="src/index2col.html">index2col</a></li>
+        <li><a href="src/index2row.html">index2row</a></li>
+        <li><a href="src/lookup.html">lookup</a></li>
+        <li><a href="src/match.html">match</a></li>
+        <li><a href="src/query.html">query</a></li>
+        <li><a href="src/ref.html">ref</a></li>
+        <li><a href="src/vlookup.html">vlookup</a></li>
+      </ul>
+    </div>
 
-  <div class="category">
-    <h2>Arrays & Objects <span class="count"></span></h2>
-    <ul class="function-list" data-category="arrays">
-      <li><a href="src/assign.html">assign</a></li>
-      <li><a href="src/diff.html">diff</a></li>
-      <li><a href="src/entries.html">entries</a></li>
-      <li><a href="src/filter.html">filter</a></li>
-      <li><a href="src/flatten.html">flatten</a></li>
-      <li><a href="src/group.html">group</a></li>
-      <li><a href="src/includes.html">includes</a></li>
-      <li><a href="src/intersect.html">intersect</a></li>
-      <li><a href="src/keys.html">keys</a></li>
-      <li><a href="src/map.html">map</a></li>
-      <li><a href="src/merge.html">merge</a></li>
-      <li><a href="src/notincludes.html">notincludes</a></li>
-      <li><a href="src/numbers.html">numbers</a></li>
-      <li><a href="src/overlap.html">overlap</a></li>
-      <li><a href="src/pluck.html">pluck</a></li>
-      <li><a href="src/reduce.html">reduce</a></li>
-      <li><a href="src/select.html">select</a></li>
-      <li><a href="src/some.html">some</a></li>
-      <li><a href="src/sort.html">sort</a></li>
-      <li><a href="src/surroundKeys.html">surroundKeys</a></li>
-      <li><a href="src/unflatten.html">unflatten</a></li>
-      <li><a href="src/unique.html">unique</a></li>
-      <li><a href="src/within.html">within</a></li>
-    </ul>
-  </div>
+    <div class="category">
+      <h2>Arrays & Objects <span class="count"></span></h2>
+      <ul class="function-list" data-category="arrays">
+        <li><a href="src/assign.html">assign</a></li>
+        <li><a href="src/diff.html">diff</a></li>
+        <li><a href="src/entries.html">entries</a></li>
+        <li><a href="src/filter.html">filter</a></li>
+        <li><a href="src/flatten.html">flatten</a></li>
+        <li><a href="src/group.html">group</a></li>
+        <li><a href="src/includes.html">includes</a></li>
+        <li><a href="src/intersect.html">intersect</a></li>
+        <li><a href="src/keys.html">keys</a></li>
+        <li><a href="src/map.html">map</a></li>
+        <li><a href="src/merge.html">merge</a></li>
+        <li><a href="src/notincludes.html">notincludes</a></li>
+        <li><a href="src/numbers.html">numbers</a></li>
+        <li><a href="src/overlap.html">overlap</a></li>
+        <li><a href="src/pluck.html">pluck</a></li>
+        <li><a href="src/reduce.html">reduce</a></li>
+        <li><a href="src/select.html">select</a></li>
+        <li><a href="src/some.html">some</a></li>
+        <li><a href="src/sort.html">sort</a></li>
+        <li><a href="src/surroundKeys.html">surroundKeys</a></li>
+        <li><a href="src/unflatten.html">unflatten</a></li>
+        <li><a href="src/unique.html">unique</a></li>
+        <li><a href="src/within.html">within</a></li>
+      </ul>
+    </div>
 
-  <div class="category">
-    <h2>Finance <span class="count"></span></h2>
-    <ul class="function-list" data-category="finance">
-      <li><a href="src/accrint.html">accrint</a></li>
-      <li><a href="src/cumipmt.html">cumipmt</a></li>
-      <li><a href="src/fv.html">fv</a></li>
-      <li><a href="src/ipmt.html">ipmt</a></li>
-      <li><a href="src/nper.html">nper</a></li>
-      <li><a href="src/npv.html">npv</a></li>
-      <li><a href="src/pmt.html">pmt</a></li>
-      <li><a href="src/pv.html">pv</a></li>
-    </ul>
-  </div>
+    <div class="category">
+      <h2>Finance <span class="count"></span></h2>
+      <ul class="function-list" data-category="finance">
+        <li><a href="src/accrint.html">accrint</a></li>
+        <li><a href="src/cumipmt.html">cumipmt</a></li>
+        <li><a href="src/fv.html">fv</a></li>
+        <li><a href="src/ipmt.html">ipmt</a></li>
+        <li><a href="src/nper.html">nper</a></li>
+        <li><a href="src/npv.html">npv</a></li>
+        <li><a href="src/pmt.html">pmt</a></li>
+        <li><a href="src/pv.html">pv</a></li>
+      </ul>
+    </div>
 
-  <div class="category">
-    <h2>Utilities <span class="count"></span></h2>
-    <ul class="function-list" data-category="util">
-      <li><a href="src/changed.html">changed</a></li>
-      <li><a href="src/decodebase64.html">decodebase64</a></li>
-      <li><a href="src/decodejwt.html">decodejwt</a></li>
-      <li><a href="src/guid.html">guid</a></li>
-      <li><a href="src/interpolate.html">interpolate</a></li>
-      <li><a href="src/interpolator.html">interpolator</a></li>
-      <li><a href="src/numbervalue.html">numbervalue</a></li>
-      <li><a href="src/parsequery.html">parsequery</a></li>
-    </ul>
-  </div>
+    <div class="category">
+      <h2>Utilities <span class="count"></span></h2>
+      <ul class="function-list" data-category="util">
+        <li><a href="src/changed.html">changed</a></li>
+        <li><a href="src/decodebase64.html">decodebase64</a></li>
+        <li><a href="src/decodejwt.html">decodejwt</a></li>
+        <li><a href="src/guid.html">guid</a></li>
+        <li><a href="src/interpolate.html">interpolate</a></li>
+        <li><a href="src/interpolator.html">interpolator</a></li>
+        <li><a href="src/numbervalue.html">numbervalue</a></li>
+        <li><a href="src/parsequery.html">parsequery</a></li>
+      </ul>
+    </div>
 
-  <script>
-    const searchInput = document.getElementById('search');
-    const allItems = document.querySelectorAll('.function-list li');
-    const categories = document.querySelectorAll('.category');
+    <script>
+      const searchInput = document.getElementById("search");
+      const allItems = document.querySelectorAll(".function-list li");
+      const categories = document.querySelectorAll(".category");
 
-    function updateCounts() {
-      categories.forEach(cat => {
-        const list = cat.querySelector('.function-list');
-        const visible = list.querySelectorAll('li:not(.hidden)').length;
-        const total = list.querySelectorAll('li').length;
-        const countEl = cat.querySelector('.count');
-        if (searchInput.value) {
-          countEl.textContent = `(${visible}/${total})`;
-        } else {
-          countEl.textContent = `(${total})`;
-        }
-        cat.style.display = visible === 0 ? 'none' : 'block';
+      function updateCounts() {
+        categories.forEach((cat) => {
+          const list = cat.querySelector(".function-list");
+          const visible = list.querySelectorAll("li:not(.hidden)").length;
+          const total = list.querySelectorAll("li").length;
+          const countEl = cat.querySelector(".count");
+          if (searchInput.value) {
+            countEl.textContent = `(${visible}/${total})`;
+          } else {
+            countEl.textContent = `(${total})`;
+          }
+          cat.style.display = visible === 0 ? "none" : "block";
+        });
+      }
+
+      searchInput.addEventListener("input", function () {
+        const query = this.value.toLowerCase();
+        allItems.forEach((item) => {
+          const text = item.textContent.toLowerCase();
+          item.classList.toggle("hidden", !text.includes(query));
+        });
+        updateCounts();
       });
-    }
 
-    searchInput.addEventListener('input', function() {
-      const query = this.value.toLowerCase();
-      allItems.forEach(item => {
-        const text = item.textContent.toLowerCase();
-        item.classList.toggle('hidden', !text.includes(query));
-      });
       updateCounts();
-    });
-
-    updateCounts();
-  </script>
-</body>
+    </script>
+  </body>
 </html>
