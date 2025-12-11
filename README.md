@@ -3,6 +3,8 @@
 
 Best function and expression library for JSON.
 
+This is a forked version of [formula/formula](https://github.com/formula/formula) with more flexible argument handling and some new functions (REMOVESTART,REMOVEEND,UNIXTODATE).
+
 ## Install
 
 ```sh
