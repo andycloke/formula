@@ -32,13 +32,13 @@
     "@rollup/plugin-node-resolve": "^13.0.5",
     "buble": "^0.19.7",
     "buble-tape-runner": "^1.0.4",
-    "documentation": "^14.0.3",
+    "documentation": "^13.2.5",
     "jison": "^0.4.18",
     "rollup": "^2.79.0",
     "tape": "^4.10.2",
     "uglify-js": "^3.6.0"
   },
   "dependencies": {
-    "jsonpath-plus": "^10.3.0"
+    "jsonpath-plus": "^6.0.1"
   }
 }
